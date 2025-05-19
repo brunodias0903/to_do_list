@@ -1,0 +1,18 @@
+export default {
+  appTitle: "Todo List App",
+  todoList: "Todo List",
+  addTodo: "Add Todo",
+  updateTodo: "Update Todo",
+  addNewTodo: "Add New Todo",
+  editTodo: "Edit Todo",
+  cancel: "Cancel",
+  delete: "Delete",
+  edit: "Edit",
+  todoTitle: "Todo title",
+  description: "Description (optional)",
+  loading: "Loading todos...",
+  noTodos: "No todos yet. Add one above!",
+  language: "Language",
+  english: "English",
+  portuguese: "Portuguese",
+};

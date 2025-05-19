@@ -1,0 +1,18 @@
+export default {
+  appTitle: "Lista de Tarefas",
+  todoList: "Lista de Tarefas",
+  addTodo: "Adicionar Tarefa",
+  updateTodo: "Atualizar Tarefa",
+  addNewTodo: "Adicionar Nova Tarefa",
+  editTodo: "Editar Tarefa",
+  cancel: "Cancelar",
+  delete: "Excluir",
+  edit: "Editar",
+  todoTitle: "Título da tarefa",
+  description: "Descrição (opcional)",
+  loading: "Carregando tarefas...",
+  noTodos: "Nenhuma tarefa ainda. Adicione uma acima!",
+  language: "Idioma",
+  english: "Inglês",
+  portuguese: "Português",
+};
