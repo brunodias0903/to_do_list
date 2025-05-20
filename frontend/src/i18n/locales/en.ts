@@ -15,4 +15,6 @@ export default {
   language: "Language",
   english: "English",
   portuguese: "Portuguese",
+  darkMode: "Dark Mode",
+  lightMode: "Light Mode",
 };

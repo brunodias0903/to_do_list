@@ -4,16 +4,16 @@ import { useTranslation } from "react-i18next";
 
 interface TodoItemProps {
   todo: Todo;
-  onToggle: (id: number) => void;
-  onDelete: (id: number) => void;
+  onToggleComplete: (id: number) => void;
   onEdit: (todo: Todo) => void;
+  onDelete: (id: number) => void;
 }
 
 const TodoItem: React.FC<TodoItemProps> = ({
   todo,
-  onToggle,
-  onDelete,
+  onToggleComplete,
   onEdit,
+  onDelete,
 }) => {
   const { t } = useTranslation();
 
@@ -25,7 +25,7 @@ const TodoItem: React.FC<TodoItemProps> = ({
             type="checkbox"
             className="todo-checkbox"
             checked={todo.completed}
-            onChange={() => onToggle(todo.id!)}
+            onChange={() => onToggleComplete(todo.id!)}
           />
           <span className={`todo-text ${todo.completed ? "completed" : ""}`}>
             {todo.title}
@@ -33,21 +33,21 @@ const TodoItem: React.FC<TodoItemProps> = ({
         </div>
         <div className="todo-actions">
           <button
-            onClick={() => onEdit(todo)}
             className="btn btn-sm btn-primary"
+            onClick={() => onEdit(todo)}
           >
             {t("edit")}
           </button>
           <button
-            onClick={() => onDelete(todo.id!)}
             className="btn btn-sm btn-danger"
+            onClick={() => onDelete(todo.id!)}
           >
             {t("delete")}
           </button>
         </div>
       </div>
       {todo.description && (
-        <p className="todo-description">{todo.description}</p>
+        <div className="todo-description">{todo.description}</div>
       )}
     </div>
   );

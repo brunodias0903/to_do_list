@@ -27,9 +27,20 @@ export class Database {
           title TEXT NOT NULL,
           description TEXT,
           completed BOOLEAN DEFAULT 0,
+          due_date DATETIME,
           created_at DATETIME DEFAULT CURRENT_TIMESTAMP
         )
       `);
+
+      const tableInfo = await this.db.all("PRAGMA table_info(todos)");
+      const dueDateExists = tableInfo.some(
+        (column: any) => column.name === "due_date"
+      );
+
+      if (!dueDateExists) {
+        await this.db.exec("ALTER TABLE todos ADD COLUMN due_date DATETIME");
+        console.log("Added due_date column to todos table");
+      }
 
       console.log("Database connected successfully");
     } catch (error) {
